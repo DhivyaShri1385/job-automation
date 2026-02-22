@@ -9,6 +9,15 @@ SMTP_PORT = int(os.getenv("EMAIL_SMTP_PORT", "587"))
 SMTP_USER = os.getenv("EMAIL_SMTP_USER", "").strip()
 SMTP_PASS = os.getenv("EMAIL_SMTP_PASS", "").strip()
 
+if not SMTP_HOST:
+    raise ValueError("SMTP_HOST missing")
+
+if not SMTP_USER:
+    raise ValueError("SMTP_USER missing")
+
+if not SMTP_PASS:
+    raise ValueError("SMTP_PASS missing")
+    
 EMAIL_TO = os.getenv("EMAIL_TO")
 EMAIL_FROM = os.getenv("EMAIL_FROM")
 
