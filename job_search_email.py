@@ -4,10 +4,10 @@ from email.message import EmailMessage
 APP_ID = os.getenv("ADZUNA_APP_ID")
 APP_KEY = os.getenv("ADZUNA_APP_KEY")
 
-SMTP_HOST = os.getenv("EMAIL_SMTP_HOST")
+SMTP_HOST = os.getenv("EMAIL_SMTP_HOST", "").strip()
 SMTP_PORT = int(os.getenv("EMAIL_SMTP_PORT", "587"))
-SMTP_USER = os.getenv("EMAIL_SMTP_USER")
-SMTP_PASS = os.getenv("EMAIL_SMTP_PASS")
+SMTP_USER = os.getenv("EMAIL_SMTP_USER", "").strip()
+SMTP_PASS = os.getenv("EMAIL_SMTP_PASS", "").strip()
 
 EMAIL_TO = os.getenv("EMAIL_TO")
 EMAIL_FROM = os.getenv("EMAIL_FROM")
