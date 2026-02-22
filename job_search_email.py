@@ -123,6 +123,10 @@ def format_email(jobs):
     return body
 
 def send_email(subject, body):
+
+    print("SMTP_HOST =", repr(SMTP_HOST))
+    print("SMTP_PORT =", repr(SMTP_PORT))
+
     msg = EmailMessage()
     msg["Subject"] = subject
     msg["From"] = EMAIL_FROM
